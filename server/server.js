@@ -16,8 +16,8 @@ var httpServer = http.createServer(app);
 app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept, Key, filename, Metadata, header");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  //res.setHeader("Access-Control-Allow-Origin", 'http://stangaone1.kataraga.com');
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", 'http://stangaone1.kataraga.com');
+  //res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
 app.use(bodyParser.json());
