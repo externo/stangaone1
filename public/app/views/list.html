@@ -1,0 +1,38 @@
+<form class="navbar-form text-center" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="{{ 'CLIENT-NAME' | translate }}"
+           ng-model="List.client.name">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="{{ 'CLIENT-DESCRIPTION' | translate }}"
+           ng-model="List.client.description">
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" placeholder="{{ 'CLIENT-QUANTITY' | translate }}"
+           ng-model="List.client.quantity">
+  </div>
+  <button type="submit" class="btn btn-success"
+          ng-click="List.addClient(List.client)">{{ 'CLIENT-BUTTON' | translate }}
+  </button>
+</form>
+
+<table class="table table-striped table-hover">
+  <thead>
+  <tr class="info">
+    <th>№</th>
+    <th sort by="order" reverse="reverse" order="'name'">{{ 'CLIENT-NAME' | translate }}</th>
+    <th sort by="order" reverse="reverse" order="'description'">{{ 'CLIENT-DESCRIPTION' | translate }}</th>
+    <th sort by="order" reverse="reverse" order="'quantity'">{{ 'CLIENT-QUANTITY' | translate }}</th>
+    <th class="text-center">#</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="client in List.clients | orderBy:order:reverse">
+    <td>{{$index + 1}}</td>
+    <td>{{client.name}}</td>
+    <td>{{client.description}}</td>
+    <td>{{client.quantity}}</td>
+    <td class="text-center danger" ng-click="List.removeClient(client)"><i class="fa fa-times" aria-hidden="true"></i></td>
+  </tr>
+  </tbody>
+</table>

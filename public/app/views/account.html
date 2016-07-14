@@ -1,0 +1,42 @@
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">{{ 'NAME' | translate }}</label>
+
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="inputName" placeholder="{{ 'NAME' | translate }}"
+               ng-model="Account.user.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">{{ 'EMAIL' | translate }}</label>
+
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="inputEmail" placeholder="{{ 'EMAIL' | translate }}"
+               ng-model="Account.user.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">{{ 'PASSWORD' | translate }}</label>
+
+      <div class="col-lg-6">
+        <input type="password" class="form-control" id="inputPassword" placeholder="{{ 'PASSWORD' | translate }}"
+               ng-model="Account.user.password">
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="Account.user.subscribe"> {{ 'SUBSCRIBE' | translate }}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-6 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary"
+                ng-click="Account.editProfile(Account.user)">
+          {{ 'EDIT-BUTTON' | translate }}
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>

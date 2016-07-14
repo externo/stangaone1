@@ -1,0 +1,31 @@
+<div ng-controller="HomeController as Home" class="gallery">
+  <div>
+
+    <div gallery class="col-md-6">
+      <div ng-repeat="image in files">
+        <p ng-show="isActive($index)">{{image.filename}}</p>
+        <img ng-src="{{Home.baseUrl}}/file/{{image._id}}" class="gallery-item" ng-show="isActive($index)"/>
+      </div>
+
+      <i class="fa fa-chevron-left" aria-hidden="true" ng-click="showPrev()"></i>
+      <i class="fa fa-chevron-right" aria-hidden="true" ng-click="showNext()"></i>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <table>
+      <thead>
+      <tr>
+        <th><input class="form-control" type="file" file-model="Home.newImage" name="file" ng-model="filename" valid-file/></th>
+        <th><button class="btn btn-success" ng-click="Home.uploadImage()">Добави</button></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="image in files">
+        <td>{{image.filename}}</td>
+        <td class="text-center btn-danger"><i class="fa fa-times" aria-hidden="true" ng-click="Home.removeImage(image._id)"></i></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

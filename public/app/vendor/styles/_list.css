@@ -1,0 +1,4 @@
+.list-wrapper { font-family: courier; }
+.list-title { font-weight: bold; font-size: 1.2em; margin-bottom: .5em }
+.list-body { padding-left: 3em; }
+.list-item { padding: 5px; margin-bottom: .3em; border: 1px #22F solid; width: 80%; background-color: #EEE; cursor: pointer; }
